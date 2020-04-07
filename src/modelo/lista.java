@@ -52,7 +52,7 @@ public class lista {
 		if(database.AbrirConexion())
 		{
 			Statement sta=database.conn.createStatement();
-			ResultSet result=sta.executeQuery("SELECT * FROM tareas WHERE LIKE '%" + busqueda + "%'");
+			ResultSet result=sta.executeQuery("SELECT * FROM tareas WHERE nombre LIKE '%" + busqueda + "%'");
 			while(result.next())
 			{
 				tareas.add(new tarea(Integer.parseInt(result.getString("id_tarea")), result.getString("nombre")));

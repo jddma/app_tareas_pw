@@ -15,8 +15,8 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a href="" class="navbar-brand">Task App</a>
             <ul class="navbar-nav ml-auto">
-                <form class="form-inline my-2 my-lg-0">
-                    <input type="search" class="form-control mr-sm-2" id="search" onkeyup="FiltrarTareas()" placeholder="Busca tu tarea">
+                <form class="form-inline my-2 my-lg-0" method="POST" action="includes/filtrar_tareas.jsp">
+                    <input type="search" class="form-control mr-sm-2" name="search" id="search" onkeyup="FiltrarTareas()" placeholder="Busca tu tarea">
                 </form>
             </ul>
         </nav>
