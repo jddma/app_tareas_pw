@@ -27,9 +27,9 @@
                         <div class="card-body">
                             <form id="task-form">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="nombre" placeholder="Nomre de la tarea">
+                                    <input id="tarea" type="text" class="form-control" id="nombre" placeholder="Nombre de la tarea">
                                 </div>
-                                <input type="submit" value="Agregar" class="btn btn-primary btn-block text-center">
+                                <input type="submit" value="Agregar" class="btn btn-primary btn-block text-center" onclick="agregarTarea()">
                             </form>
                         </div>
                     </div>

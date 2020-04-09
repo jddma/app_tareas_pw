@@ -6,5 +6,4 @@
 	String json_tareas=lista.FiltrarTareas(busqueda);
 	out.print(json_tareas);
 	
-	
 %>

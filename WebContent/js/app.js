@@ -1,3 +1,14 @@
+
+function agregarTarea(){
+	
+	let obj = new XMLHttpRequest();
+	obj.open("POST", "includes/agregar_tareas.jsp", true);
+	obj.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	
+	 var tarea = document.getElementById("tarea").value;
+	obj.send("tarea=" + tarea);
+}
+
 function FiltrarTareas() {
 	
 	let obj=new XMLHttpRequest();
