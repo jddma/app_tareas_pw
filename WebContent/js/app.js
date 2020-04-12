@@ -59,7 +59,7 @@ function RefrescarTareas(tareas_en_pantalla) {
     {
         tabla.removeChild(tareas_actuales[i]);              
     }
-	
+	console.log("prueba");
 	//Convierte el string de json a un objeto de javascript
     let tareas=JSON.parse(tareas_en_pantalla);
     tareas.forEach(tarea => 

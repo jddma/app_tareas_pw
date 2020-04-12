@@ -2,7 +2,7 @@
 <%
 
 	int id=Integer.parseInt(request.getParameter("id"));
-	lista.EliminarTarea(id);
+	lista.eliminarTarea(id);
 
 	//Obtiene la lista actulizada de tareas para actualizar la tabla
 	lista.IntanciarTareas();

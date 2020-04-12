@@ -12,7 +12,7 @@ public class database {
 		try 
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn=DriverManager.getConnection("jdbc:mysql://127.0.0.1/app_tareas", "admin", "admin6673");
+			conn=DriverManager.getConnection("jdbc:mysql://127.0.0.1/app_tareas", "root", "");
 			return true;
 		} 
 		catch (Exception e) 

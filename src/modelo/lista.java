@@ -114,12 +114,34 @@ public class lista{
 
 	}
 	
-	public static boolean EliminarTarea(int id) {
-		
-		System.out.println(id);
-		
-		return true;
-		
+	public static boolean eliminarTarea(int id) {
+		if(database.AbrirConexion()) {
+			
+			try {
+				
+				String del = "DELETE FROM tareas WHERE id_tarea = ?";
+
+				PreparedStatement preparestmt = database.conn.prepareStatement(del);
+				preparestmt.setInt(1, id);
+				
+				int resu = preparestmt.executeUpdate();
+				
+				if(resu> 0) {
+					database.CerrarConexion();
+					return true;
+				}else {
+					database.CerrarConexion();
+					return false;
+				}
+				
+			}catch (SQLException ex) {
+				database.CerrarConexion();
+				return false;
+			}
+			
+		}else {
+			return true;
+		}
 	}
 
 }
