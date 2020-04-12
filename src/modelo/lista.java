@@ -18,6 +18,16 @@ public class lista{
 		
 	}
 	
+	public static String getJSONStringTareasEnPantalla() {
+		
+		Gson JSON=new Gson();
+		tarea[]array_tareas=tareas_en_pantalla.toArray(new tarea[tareas_en_pantalla.size()]);
+		String json_string_tareas=JSON.toJson(array_tareas);
+		
+		return json_string_tareas;
+		
+	}
+	
 	public static void 	IntanciarTareas() throws SQLException {
 		
 		LinkedList<tarea> tareas=new LinkedList<tarea>();
@@ -102,6 +112,14 @@ public class lista{
 			return false;
 		}
 
+	}
+	
+	public static boolean EliminarTarea(int id) {
+		
+		System.out.println(id);
+		
+		return true;
+		
 	}
 
 }

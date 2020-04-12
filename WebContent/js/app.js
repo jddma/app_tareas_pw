@@ -17,6 +17,22 @@ function agregarTarea(){
 	document.getElementById("tarea").value="";
 }
 
+function EliminarTarea(id) {
+	
+	let obj=new XMLHttpRequest();
+	obj.open("POST","includes/eliminar_tarea.jsp",true);
+	obj.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	obj.onreadystatechange=function (){
+	       
+    	RefrescarTareas(obj.responseText);  
+    	console.log(obj.responseText);
+        
+    }
+	
+	obj.send("id=" + id);
+	
+}
+
 function FiltrarTareas() {
 	
 	let obj=new XMLHttpRequest();
@@ -57,9 +73,18 @@ function RefrescarTareas(tareas_en_pantalla) {
         let col2=document.createElement("td");
         let text2=document.createTextNode(tarea.nombre);
         col2.appendChild(text2);
+        
+        let col3=document.createElement("td");
+        let button=document.createElement("input");
+        button.setAttribute("type", "button");;
+        button.setAttribute("class", "btn btn-danger");
+        button.setAttribute("onclick", "EliminarTarea(" + tarea.id+ ")");
+        button.setAttribute("value", "Eliminar");
+        col3.appendChild(button);
 
         fila.appendChild(col1);
         fila.appendChild(col2);
+        fila.appendChild(col3);
 
         tabla.appendChild(fila);
     });

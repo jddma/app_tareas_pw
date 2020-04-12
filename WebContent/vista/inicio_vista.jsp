@@ -35,11 +35,12 @@
                     </div>
                 </div>
                 <div class="col-md-7">
-                    <table class="table table-bordered table-sm">
+                    <table class="table table-bordered table-sm text-center">
                         <thead>
                             <tr>
                                 <th>Id</th>
                                 <th>Nombre</th>
+                                <th>&nbsp</th>
                             </tr>
                         </thead>
                         <tbody id="tareas">
@@ -47,7 +48,7 @@
 	                            for (tarea obj : lista.getTareasEnPantalla())
 	                            {
 	                            	out.print("\r\t\t\t\t\t\t\t<tr>\n"  
-	                            			+ "\r\t\t\t\t\t\t\t\t<td>" + obj.getId() + "</td>\n" + "\r\t\t\t\t\t\t\t\t<td>" + obj.getNombre() + "</td>\n"	
+	                            			+ "\r\t\t\t\t\t\t\t\t<td>" + obj.getId() + "</td>\n" + "\r\t\t\t\t\t\t\t\t<td>" + obj.getNombre() + "</td>\n" + "\r\t\t\t\t\t\t\t\t<td class='text-center'><input type='button' class='btn btn-danger' onclick='EliminarTarea(" + obj.getId() + ")' value='Eliminar'></td>\n"	
 	                            			+ "\r\t\t\t\t\t\t\t</tr>\n");
 	                            }
                             
