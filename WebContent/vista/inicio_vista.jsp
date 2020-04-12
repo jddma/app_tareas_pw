@@ -15,7 +15,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a href="" class="navbar-brand">Task App</a>
             <ul class="navbar-nav ml-auto">
-                <form class="form-inline my-2 my-lg-0" method="POST" action="includes/filtrar_tareas.jsp">
+                <form class="form-inline my-2 my-lg-0">
                     <input type="search" class="form-control mr-sm-2" name="search" id="search" onkeyup="FiltrarTareas()" placeholder="Busca tu tarea">
                 </form>
             </ul>
@@ -27,9 +27,9 @@
                         <div class="card-body">
                             <form id="task-form">
                                 <div class="form-group">
-                                    <input id="tarea" type="text" class="form-control" id="nombre" placeholder="Nombre de la tarea">
+                                    <input id="tarea" type="text" class="form-control" id="nombre" autocomplete="off" placeholder="Nombre de la tarea">
                                 </div>
-                                <input type="submit" value="Agregar" class="btn btn-primary btn-block text-center" onclick="agregarTarea()">
+                                <input type="button" value="Agregar" class="btn btn-primary btn-block text-center" onclick="agregarTarea()">
                             </form>
                         </div>
                     </div>
@@ -54,8 +54,7 @@
                             %>
                         </tbody>
                     </table>
-                </div>
-                
+                </div>            
             </div>
         </div>
     </body>

@@ -35,7 +35,7 @@ public class lista{
 			 * */
 			while(result.next())
 			{
-				System.out.println(result.getString("id_tarea") + " " + result.getString("nombre"));
+				//System.out.println(result.getString("id_tarea") + " " + result.getString("nombre"));
 				tareas.add( new tarea(Integer.parseInt(result.getString("id_tarea")), result.getString("nombre")) );
 			}
 			
