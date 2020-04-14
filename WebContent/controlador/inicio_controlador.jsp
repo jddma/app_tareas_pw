@@ -1,6 +1,5 @@
 <%@page import="modelo.tarea"%>
 <%@page import="modelo.lista"%>
-<%@page import="java.util.LinkedList" %>
 <%
 
 	lista.IntanciarTareas();

@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <%@page import="modelo.lista"%>
 <%@page import="modelo.tarea"%>
-<%@page import="java.util.LinkedList" %>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
