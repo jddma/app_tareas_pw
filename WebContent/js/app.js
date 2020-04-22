@@ -1,20 +1,43 @@
 
+function verificarEntrada() {
+	let valoresNoPermitidos = ["|","!","\"\"","#","&","%","$","/","(", ")", "=", "?", "\'", "\\", "¿", "¡", "°", "¬", "´", "+"
+		,"*", "~", "]", "}", "[", "{", "^", "-", "_", ":", ";"]
+
+	let entrada = document.getElementById("tarea").value;
+	let caracterInvalido = false;
+	
+	for (var i = 0; i < valoresNoPermitidos.length; i++) {
+		if(entrada.indexOf(valoresNoPermitidos[i]) > -1){
+			caracterInvalido = true;
+			break;
+		}
+	}
+	return caracterInvalido; 
+}
+
 function agregarTarea(){
 	
-	let obj=new XMLHttpRequest();
-	obj.open("POST","includes/agregar_tareas.jsp",true);
-	obj.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	obj.onreadystatechange=function (){
-	       
-    	RefrescarTareas(obj.responseText);  
-    	console.log(obj.responseText);
-        
-    }
+	let caracterInvalido = verificarEntrada();
 	
-	let tarea = document.getElementById("tarea").value;
-	obj.send("tarea=" + tarea);
-	
-	document.getElementById("tarea").value="";
+	if(!caracterInvalido){
+		let obj=new XMLHttpRequest();
+		obj.open("POST","includes/agregar_tareas.jsp",true);
+		obj.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		obj.onreadystatechange=function (){
+		       
+	    	RefrescarTareas(obj.responseText);  
+	    	console.log(obj.responseText);
+	        
+	    }
+		
+		let tarea = document.getElementById("tarea").value;
+		obj.send("tarea=" + tarea);
+		
+		document.getElementById("tarea").value="";
+	}else{
+		alert("La tarea contiene carateres no permitidos, por favor eliminelos");
+		console.log("dasdcasfs")
+	}
 }
 
 function EliminarTarea(id) {

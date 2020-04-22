@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <%@page import="modelo.lista"%>
 <%@page import="modelo.tarea"%>
+<%@page import="java.util.LinkedList"%>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
@@ -44,13 +45,16 @@
                         </thead>
                         <tbody id="tareas">
                             <%             
-	                            for (tarea obj : lista.getTareasEnPantalla())
-	                            {
-	                            	out.print("\r\t\t\t\t\t\t\t<tr>\n"  
-	                            			+ "\r\t\t\t\t\t\t\t\t<td>" + obj.getId() + "</td>\n" + "\r\t\t\t\t\t\t\t\t<td>" + obj.getNombre() + "</td>\n" + "\r\t\t\t\t\t\t\t\t<td class='text-center'><input type='button' class='btn btn-danger' onclick='EliminarTarea(" + obj.getId() + ")' value='Eliminar'></td>\n"	
-	                            			+ "\r\t\t\t\t\t\t\t</tr>\n");
+	                            try{
+	                            	for (tarea obj : lista.getTareasEnPantalla())
+		                            {
+		                            	out.print("\r\t\t\t\t\t\t\t<tr>\n"  
+		                            			+ "\r\t\t\t\t\t\t\t\t<td>" + obj.getId() + "</td>\n" + "\r\t\t\t\t\t\t\t\t<td>" + obj.getNombre() + "</td>\n" + "\r\t\t\t\t\t\t\t\t<td class='text-center'><input type='button' class='btn btn-danger' onclick='EliminarTarea(" + obj.getId() + ")' value='Eliminar'></td>\n"	
+		                            			+ "\r\t\t\t\t\t\t\t</tr>\n");
+		                            }
+	                            }catch(Exception ex){
+	                            	System.out.println(ex);
 	                            }
-                            
                             %>
                         </tbody>
                     </table>
